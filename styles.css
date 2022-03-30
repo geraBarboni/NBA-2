@@ -1,0 +1,91 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+.card {
+  border-radius: 10px;
+  border: 0px;
+  height: 7rem;
+}
+.cardTable {
+  border-radius: 10px;
+  border: 0px;
+}
+.imgTeamsTable {
+  max-height: 3rem;
+  max-width: 3rem;
+}
+.img-teams {
+  max-height: 6rem;
+  margin: auto;
+}
+.img-fluid {
+  margin: auto;
+  display: flex;
+  max-height: 5rem;
+}
+.btn {
+  border-radius: 10px;
+}
+.btn-outline-dark {
+  border-radius: 10px;
+  border: 2px solid;
+}
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #999;
+}
+.form-select {
+  border-radius: 10px;
+  border: 2px solid #999;
+}
+.login {
+  height: 80vh;
+}
+.cabecera p {
+  font-weight: 600;
+}
+.navbar-brand img {
+  height: 2rem;
+  cursor: pointer;
+}
+#alerts {
+  position: absolute;
+  z-index: 99;
+}
+/*--------------------------------------------------------------------INDEX*/
+.stats {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  border-radius: 10px;
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+  background-color: white;
+}
+.stats div {
+  margin: auto;
+}
+/*--------------------------------------------------------------------LESIONADOS*/
+.imgPJ {
+  height: 50px;
+}
+/*--------------------------------------------------------------------INDEX*/
+.left {
+  height: 87vh;
+  display: flex;
+}
+
+.right {
+  height: 87vh;
+  display: flex;
+}
+.buttons {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.gameTime {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
