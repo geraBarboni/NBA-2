@@ -74,20 +74,38 @@ function showTableHTML() {
       (teamE) => teamE.TeamID === easternConference[i].TeamID,
     )
 
+    i === 6 &&
+      (tableEastHTML.innerHTML += `
+    <hr class="m-0">
+    `)
+    i === 10 &&
+      (tableEastHTML.innerHTML += `
+    <hr class="m-0">
+    `)
+
     tableEastHTML.innerHTML += `
-      <div class="cardTable p-3 my-2 shadow">
-        <div class="row">
-          <div class="col-4 d-flex">
-            <img class="imgTeamsTable m-auto" src="${teamsE[0].WikipediaLogoUrl}" alt="" />
-          </div>
-          <div class="col-4 d-flex">
-            <p class="m-auto">${easternConference[i].City} ${easternConference[i].Name}</p>
-          </div>
-          <div class="col-4 d-flex">
-            <p class="m-auto">${easternConference[i].Wins} - ${easternConference[i].Losses}</p>
-          </div>
-        </div>
+    <div class="card my-2 p-1 shadow" href="" id="${
+      easternConference[i].TeamID
+    }" onclick="ver(${easternConference[i].TeamID})">
+    <div class="row p-1">
+      <div class="col-4 d-flex">
+        <div class="POseed col-2 m-auto">${[i + 1]}</div>
+        <img class="imgTeamsTable m-auto" src="${
+          teamsE[0].WikipediaLogoUrl
+        }" alt="" />
       </div>
+      <div class="col-4 m-auto">
+        <p class="m-auto">${easternConference[i].City} ${
+      easternConference[i].Name
+    }</p>
+      </div>
+      <div class="col-4 m-auto">
+        <p class="m-auto">${easternConference[i].Wins} - ${
+      easternConference[i].Losses
+    }</p>
+      </div>
+    </div>
+  </div>
     `
   }
 
@@ -96,17 +114,33 @@ function showTableHTML() {
       (teamW) => teamW.TeamID === westernConference[i].TeamID,
     )
 
+    i === 6 &&
+      (tableWestHTML.innerHTML += `
+    <hr class="m-0">
+    `)
+    i === 10 &&
+      (tableWestHTML.innerHTML += `
+    <hr class="m-0">
+    `)
+
     tableWestHTML.innerHTML += `
-    <div class="cardTable p-3 my-2 shadow">
-    <div class="row">
+    <div class="card my-2 p-1 shadow">
+    <div class="row p-1">
       <div class="col-4 d-flex">
-        <img class="imgTeamsTable m-auto" src="${teamsW[0].WikipediaLogoUrl}" alt="" />
+        <div class="POseed col-2 m-auto">${[i + 1]}</div>
+        <img class="imgTeamsTable m-auto" src="${
+          teamsW[0].WikipediaLogoUrl
+        }" alt="" />
       </div>
-      <div class="col-4 d-flex">
-        <p class="m-auto">${westernConference[i].City} ${westernConference[i].Name}</p>
+      <div class="col-4 m-auto">
+        <p class="m-auto">${westernConference[i].City} ${
+      westernConference[i].Name
+    }</p>
       </div>
-      <div class="col-4 d-flex">
-        <p class="m-auto">${westernConference[i].Wins} - ${westernConference[i].Losses}</p>
+      <div class="col-4 m-auto">
+        <p class="m-auto">${westernConference[i].Wins} - ${
+      westernConference[i].Losses
+    }</p>
       </div>
     </div>
   </div>
@@ -115,4 +149,10 @@ function showTableHTML() {
 
   console.log(easternConference)
   console.log(westernConference)
+}
+
+function ver(id) {
+  let selectedID = id
+  localStorage.setItem('selectedID', JSON.stringify(selectedID))
+  window.location.href = '../html/infoEquipo.html'
 }
