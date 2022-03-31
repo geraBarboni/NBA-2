@@ -102,16 +102,17 @@ function showGamesOfTheDayHTML() {
     }
 
     gamesOfTheDayHTML.innerHTML += `
-    <div class="card p-3 my-2 shadow">
-    <div class="row">
-      <div class="col-4 img-teams">
-        <img class="img-fluid " src="${homeTeam[0].WikipediaLogoUrl}" alt="" />
-      </div>
-      <div class="col-4 m-auto">
-        <p class="text-center m-auto gameTime">${gameHour}:${gameMinutes}</p>
-      </div>
-      <div class="col-4 img-teams">
-        <img class="img-fluid " src="${awayTeam[0].WikipediaLogoUrl}" alt="" />
+    <div class="card my-2 p-2 shadow">
+      <div class="row p-2">
+        <div class="col-4 d-flex">
+          <img class="img-fluid img-teams m-auto" src="${homeTeam[0].WikipediaLogoUrl}" alt="" />
+        </div>
+        <div class="col-4 m-auto">
+          <p class="text-center m-auto gameTime">${gameHour}:${gameMinutes}</p>
+        </div>
+        <div class="col-4 d-flex">
+          <img class="img-fluid img-teams m-auto" src="${awayTeam[0].WikipediaLogoUrl}" alt="" />
+        </div>
       </div>
     </div>
         `

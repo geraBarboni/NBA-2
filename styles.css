@@ -1,27 +1,6 @@
+/*-------------------------------------------GENERALS*/
 * {
   font-family: 'Poppins', sans-serif;
-}
-.card {
-  border-radius: 10px;
-  border: 0px;
-  height: 7rem;
-}
-.cardTable {
-  border-radius: 10px;
-  border: 0px;
-}
-.imgTeamsTable {
-  max-height: 3rem;
-  max-width: 3rem;
-}
-.img-teams {
-  max-height: 6rem;
-  margin: auto;
-}
-.img-fluid {
-  margin: auto;
-  display: flex;
-  max-height: 5rem;
 }
 .btn {
   border-radius: 10px;
@@ -30,62 +9,58 @@
   border-radius: 10px;
   border: 2px solid;
 }
-.form-control {
+.card {
   border-radius: 10px;
-  border: 2px solid #999;
+  border: 0px;
 }
-.form-select {
-  border-radius: 10px;
-  border: 2px solid #999;
+a {
+  text-decoration: none;
+  color: black;
 }
-.login {
-  height: 80vh;
-}
-.cabecera p {
-  font-weight: 600;
-}
-.navbar-brand img {
-  height: 2rem;
-  cursor: pointer;
-}
-#alerts {
-  position: absolute;
-  z-index: 99;
-}
-/*--------------------------------------------------------------------INDEX*/
-.stats {
-  display: none;
-  position: absolute;
-  z-index: 99;
-  border-radius: 10px;
-  height: 150px;
-  width: 150px;
-  padding: 20px;
-  background-color: white;
-}
-.stats div {
-  margin: auto;
-}
-/*--------------------------------------------------------------------LESIONADOS*/
-.imgPJ {
-  height: 50px;
-}
-/*--------------------------------------------------------------------INDEX*/
-.left {
-  height: 87vh;
-  display: flex;
+a:hover {
+  text-decoration: none;
+  color: black;
 }
 
-.right {
-  height: 87vh;
-  display: flex;
+/*-------------------------------------------TABLE*/
+
+.imgTeamsTable {
+  max-height: 3rem;
+  max-width: 3rem;
+  min-height: 3rem;
+  min-width: 3rem;
 }
-.buttons {
-  width: 100%;
-  margin-top: auto;
-  margin-bottom: auto;
+.POseed {
+  border-radius: 1rem;
+}
+
+/*-------------------------------------------PARIDOS*/
+.img-teams {
+  max-height: 5rem;
+  max-width: 5rem;
+  min-height: 5rem;
+  min-width: 5rem;
 }
 .gameTime {
   font-size: 1.2rem;
   font-weight: 500;
+}
+/*-------------------------------------------PARIDOS*/
+
+.img-team-info-div {
+  max-height: 15rem;
+  max-width: 15rem;
+  min-height: 15rem;
+  min-width: 15rem;
+}
+.img-team-info {
+  max-height: 13rem;
+  max-width: 13rem;
+  min-height: 13rem;
+  min-width: 13rem;
+}
+
+/*--------------------------------------------------------------------LESIONADOS*/
+.imgPJ {
+  height: 50px;
 }
