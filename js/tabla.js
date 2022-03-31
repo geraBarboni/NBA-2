@@ -124,7 +124,9 @@ function showTableHTML() {
     `)
 
     tableWestHTML.innerHTML += `
-    <div class="card my-2 p-1 shadow">
+    <div class="card my-2 p-1 shadow" href="" id="${
+      westernConference[i].TeamID
+    }" onclick="ver(${westernConference[i].TeamID})">
     <div class="row p-1">
       <div class="col-4 d-flex">
         <div class="POseed col-2 m-auto">${[i + 1]}</div>
