@@ -66,19 +66,18 @@ async function areGamesInProgressAPI() {
 }
 
 async function boxScoreAPI() {
-  if (areGamesInProgress) {
-    for (let i = 0; i < gamesOfTheDate.length; i++) {
-      try {
-        let response = await fetch(
-          `https://api.sportsdata.io/v3/nba/stats/json/BoxScore/${gamesOfTheDate[i].GameID}?key=8511bfc544294db6b0c8aec24806f54f`,
-        )
-        gameBoxScore = await response.json()
-        gamesInProgress.push(gameBoxScore)
-      } catch (err) {
-        console.log('Error ==> ', err)
-      }
+  for (let i = 0; i < gamesOfTheDate.length; i++) {
+    try {
+      let response = await fetch(
+        `https://api.sportsdata.io/v3/nba/stats/json/BoxScore/${gamesOfTheDate[i].GameID}?key=8511bfc544294db6b0c8aec24806f54f`,
+      )
+      gameBoxScore = await response.json()
+      gamesInProgress.push(gameBoxScore)
+    } catch (err) {
+      console.log('Error ==> ', err)
     }
   }
+
   console.log(gamesInProgress)
   showGamesInProgressHTML()
 }
@@ -106,47 +105,31 @@ function showGamesInProgressHTML() {
         (thisGame) => thisGame.Game.GameID === gamesOfTheDate[i].GameID,
       )
 
-      console.log(gameLiveInfo)
+      console.log(gameLiveInfo[0].Game.HomeTeamScore)
 
-      if (gameLiveInfo[0].Game.Status === 'Scheduled') {
+      if (gameLiveInfo[0].Game.Status === 'InProgress') {
         gamesOfTheDayInProgressHTML.innerHTML += `
             <div class="card p-3 my-2 shadow">
               <div class="row">
                 <div class="col-4 d-flex ">
-                  <img class="img-fluid img-teams m-auto" src="${
-                    homeTeam[0].WikipediaLogoUrl
-                  }" alt="" />
+                  <img class="img-fluid img-teams m-auto" src="${homeTeam[0].WikipediaLogoUrl}" alt="" />
                 </div>
                 <div class="col-4 m-auto">
                   <div class="row">
                     <div class="col-12 m-auto">
-                      <p class="text-center m-auto gameTime"> 
-                        ${
-                          gameLiveInfo[0].Game.Quarter === null
-                            ? (gameLiveInfo[0].Game.Quarter = 'No iniciado')
-                            : 'C ' + gameLiveInfo[0].Game.Quarter
-                        }
+                      <p class="text-center m-auto gameTime"> Q 
+                      ${gameLiveInfo[0].Game.Quarter}
                       </p>
                     </div>
                     <div class="col-12 m-auto">
                       <p class="text-center m-auto gameTime">
-                        ${
-                          gameLiveInfo[0].Game.HomeTeamScore === null
-                            ? (gameLiveInfo[0].Game.HomeTeamScore = '0')
-                            : gameLiveInfo[0].Game.HomeTeamScore
-                        } | ${
-          gameLiveInfo[0].Game.AwayTeamScore === null
-            ? (gameLiveInfo[0].Game.AwayTeamScore = '0')
-            : gameLiveInfo[0].Game.AwayTeamScore
-        }
+                        ${gameLiveInfo[0].Game.HomeTeamScore} | ${gameLiveInfo[0].Game.AwayTeamScore}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="col-4 d-flex">
-                  <img class="img-fluid img-teams m-auto" src="${
-                    awayTeam[0].WikipediaLogoUrl
-                  }" alt="" />
+                  <img class="img-fluid img-teams m-auto" src="${awayTeam[0].WikipediaLogoUrl}" alt="" />
                 </div>
               </div>
             </div>
